@@ -1,8 +1,14 @@
 import * as functions from 'firebase-functions';
+import req = require('request');
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-export const helloWorld = functions.https.onRequest((request, response) => {
-    response.send("Hello my love");
+
+export const traffic = functions.https.onRequest((request, response) => {
+    req({
+        url: 'http://rtr.pbs.gov.tw/pbsmgt/RoadAllServlet?ajaxAction=roadAllCache',
+        json: true
+    }, (error, tesponse, body) => {
+        response.send(JSON.stringify(body,undefined,2));
+    });     
 });
+
+export const 
