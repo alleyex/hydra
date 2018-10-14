@@ -1,5 +1,5 @@
-var getUser = (id, callback) =>{
-    var user= {
+const getUser = (id, callback) =>{
+    const user= {
         id:id,
         name:'Vikram'
     };
