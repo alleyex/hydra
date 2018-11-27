@@ -1,0 +1,2 @@
+cd functions
+npm install firebase-admin@latest firebase-functions@latest
